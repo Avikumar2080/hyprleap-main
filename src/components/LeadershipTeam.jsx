@@ -9,14 +9,14 @@ import rajulImg from "../assets/RajulMams.jpg";
 
 const leaders = [
   {
-    id: "rajul",
-    name: "Rajul Agrawal",
-    title: "Co-Founder & Global Talent Strategist",
-    oneLine: "Leadership advisory and executive search specialist with expertise in research-driven, cross-industry talent solutions.",
-    email: "rajul@hyprleap.com",
-    image: rajulImg,
-    bio: "She brings deep expertise in executive search and leadership advisory, with a strong focus on identifying and placing transformative senior talent across diverse industries. Her strengths lie in research-driven hiring, cultural alignment, and strategic leadership assessment, helping organizations build resilient, future-ready leadership teams in complex and global environments.",
-    initials: "RJ",
+    id: "giri",
+    name: "Giri Sunder",
+    title: "Partner – FMCG, Food & Africa Practice",
+    oneLine:
+      "Global FMCG and operations leader with deep Africa and emerging-market experience.",
+    email: "giri@hyprleap.com",
+    image: giriImg,
+    bio: `Giri brings 36 years of leadership across OSI Group, Coca-Cola, and African growth markets, with deep expertise in P&L leadership, supply chain, and multi-country operations.`,
   },
   {
     id: "nitin",
@@ -29,16 +29,6 @@ const leaders = [
     bio: `Nitin is a seasoned CEO/CFO and Board leader with 20+ years of experience across globally respected organisations including Religare, Citigroup, GE–SBI Cards, Delphi Automotive, and Coca-Cola.
 
 He has led complex mandates such as scaling Religare from under $100M to over $1B, raising ₹2,000+ crore, and leading large, regulated enterprises across India and APAC.`,
-  },
-  {
-    id: "giri",
-    name: "Giri Sunder",
-    title: "Partner – FMCG, Food & Africa Practice",
-    oneLine:
-      "Global FMCG and operations leader with deep Africa and emerging-market experience.",
-    email: "giri@hyprleap.com",
-    image: giriImg,
-    bio: `Giri brings 36 years of leadership across OSI Group, Coca-Cola, and African growth markets, with deep expertise in P&L leadership, supply chain, and multi-country operations.`,
   },
   {
     id: "sumit",
@@ -70,6 +60,16 @@ He has led complex mandates such as scaling Religare from under $100M to over $1
     image: satyajitImg,
     bio: `An XLRI alumnus, Satyajit has led large-scale HR, organisation design, and leadership transformation across India, Europe, and LATAM.`,
   },
+  {
+    id: "rajul",
+    name: "Rajul Agrawal",
+    title: "Co-Founder & Global Talent Strategist",
+    oneLine: "Leadership advisory and executive search specialist with expertise in research-driven, cross-industry talent solutions.",
+    email: "rajul@hyprleap.com",
+    image: rajulImg,
+    bio: "She brings deep expertise in executive search and leadership advisory, with a strong focus on identifying and placing transformative senior talent across diverse industries. Her strengths lie in research-driven hiring, cultural alignment, and strategic leadership assessment, helping organizations build resilient, future-ready leadership teams in complex and global environments.",
+    initials: "RJ",
+  }
 ];
 
 export default function LeadershipTeam() {
