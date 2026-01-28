@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import nitinImg from "../assets/NitinSir.png";
-import giriImg from "../assets/GiriSundar.png";
+import giriImg from "../assets/GiriSundar.jpg";
 import satyajitImg from "../assets/SatyajitSir.png";
 import rajShekharImg from "../assets/RajShekharSir.png";
 import sumitImg from "../assets/SumitSir.png";
