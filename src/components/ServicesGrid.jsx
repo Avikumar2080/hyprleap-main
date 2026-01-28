@@ -43,21 +43,44 @@ const services = [
 export default function ServicesGrid() {
   const [activeService, setActiveService] = useState(null);
 
+const handleServiceClick = (service) => {
+  if (activeService?.title === service.title) {
+    setActiveService(null); // close if same card clicked
+  } else {
+    setActiveService(service); // open
+  }
+};
+
   return (
-    <section className="section-alt py-20">
+    <section id = "services"className="section-alt py-20">
       <div className="container-centered">
         <h2 className="mb-12">What we solve best</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="card">
+            <div
+            key={index}
+            className="
+              card
+              cursor-pointer
+              transition-transform transition-shadow
+              duration-200
+              ease-[cubic-bezier(0.4,0,0.2,1)]
+              hover:-translate-y-2
+              hover:shadow-[0_16px_32px_rgba(0,0,0,0.08)]
+            "
+            onClick={() => handleServiceClick(service)}
+          >
               {/* IMAGE (clickable) */}
-              <div
-                className="card-image cursor-pointer"
-                onClick={() => setActiveService(service)}
-              >
-                <img src={service.image} alt={service.title} />
-              </div>
+              
+              <div className="card-image cursor-pointer overflow-hidden" >
+  <img
+    src={service.image}
+    alt={service.title}
+    className="transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+  />
+</div>
+
 
               <div className="p-6">
                 <h4 className="mb-3">{service.title}</h4>
@@ -66,7 +89,7 @@ export default function ServicesGrid() {
 
                 <button
                   className="text-[var(--brand-green)] font-medium"
-                  onClick={() => setActiveService(service)}
+                  onClick={() => handleServiceClick(service)}
                 >
                   Learn more →
                 </button>
@@ -78,10 +101,12 @@ export default function ServicesGrid() {
 
       {/* MODAL */}
       {activeService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+        <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+        onClick={() => setActiveService(null)}
+      >
           <div className="overlay-card max-w-2xl w-full relative">
             <button
-              onClick={() => setActiveService(null)}
               className="absolute top-4 right-4 text-gray-400 text-2xl"
             >
               ×

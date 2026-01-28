@@ -29,7 +29,7 @@ const logos = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-16 bg-slate-50 overflow-hidden">
+    <section id = "worked" className="py-16 bg-slate-50 overflow-hidden">
       <h3 className="text-center text-xl font-semibold text-gray-800 mb-10">
         Trusted by
       </h3>

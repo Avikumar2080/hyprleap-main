@@ -11,7 +11,7 @@ const leaders = [
   {
     id: "giri",
     name: "Giri Sunder",
-    title: "Partner – FMCG, Food & Africa Practice",
+    title: "Co-Founder & Global Operating Partner – FMCG & Food",
     oneLine:
       "Global FMCG and operations leader with deep Africa and emerging-market experience.",
     email: "giri@hyprleap.com",
@@ -33,7 +33,7 @@ He has led complex mandates such as scaling Religare from under $100M to over $1
   {
     id: "sumit",
     name: "Sumit Agrawal",
-    title: "Co-Founder",
+    title: "Partner",
     oneLine: "Extensive experience in executive search and senior-level recruitment across industries.",
     email: "sumit@hyprleap.com",
     image: sumitImg,
@@ -63,7 +63,7 @@ He has led complex mandates such as scaling Religare from under $100M to over $1
   {
     id: "rajul",
     name: "Rajul Agrawal",
-    title: "Co-Founder & Global Talent Strategist",
+    title: "Partner & Global Talent Strategist",
     oneLine: "Leadership advisory and executive search specialist with expertise in research-driven, cross-industry talent solutions.",
     email: "rajul@hyprleap.com",
     image: rajulImg,
@@ -74,6 +74,14 @@ He has led complex mandates such as scaling Religare from under $100M to over $1
 
 export default function LeadershipTeam() {
   const [active, setActive] = useState(null);
+
+  const handleLeaderClick = (leader) => {
+    if (active?.id === leader.id) {
+      setActive(null); // close if same card clicked
+    } else {
+      setActive(leader); // open
+    }
+  };
 
   return (
     <section className="section-light">
@@ -88,10 +96,10 @@ export default function LeadershipTeam() {
         <div className="leadership-grid-fixed">
           {leaders.map((p) => (
             <div
-              key={p.id}
-              className="leader-card"
-              onClick={() => setActive(p)}
-            >
+            key={p.id}
+            className="leader-card"
+            onClick={() => handleLeaderClick(p)}
+          >
               <div className="leader-img">
                 {p.image ? (
                   <img src={p.image} alt={p.name} />
@@ -119,9 +127,9 @@ export default function LeadershipTeam() {
         {active && (
           <div className="leader-modal" onClick={() => setActive(null)}>
             <div
-              className="leader-modal-card"
-              onClick={(e) => e.stopPropagation()}
-            >
+  className="leader-modal-card"
+  onClick={() => setActive(null)}
+>
               <div className="leader-modal-img">
                 {active.image ? (
                   <img src={active.image} alt={active.name} />

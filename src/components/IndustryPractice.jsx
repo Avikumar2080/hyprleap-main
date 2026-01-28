@@ -32,7 +32,7 @@ export default function IndustryPractice() {
   const [activeIndustry, setActiveIndustry] = useState(null);
 
   return (
-    <section className="section-light">
+    <section id = "sectors"className="section-light">
       <div className="container-centered industry-section">
         <div className="industry-container">
           {/* LEFT */}

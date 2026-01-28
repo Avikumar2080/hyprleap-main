@@ -3,7 +3,7 @@ import heroImg from "../assets/hero-img.jpg";
 
 export default function HeroSlider() {
   return (
-    <section className="hero-wrapper py-24">
+    <section id = "home" className="hero-wrapper py-24">
       <div className="container-centered grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* LEFT: IMAGE */}

@@ -52,4 +52,7 @@
   );
   pointer-events: none;
 }
+section {
+  scroll-margin-top: 80px;
+}
 
