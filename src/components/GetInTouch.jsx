@@ -19,44 +19,28 @@ const latLngToPercent = (lat, lng) => {
 };
 
 
-// const locations = [
-//   {
-//     name: "Delhi – NCR",
-//     ...latLngToPercent(28.6139, 77.2090)
-//   },
-//   {
-//     name: "Mumbai",
-//     ...latLngToPercent(19.0760, 72.8777)
-//   },
-//   {
-//     name: "Toronto, Canada",
-//     ...latLngToPercent(43.6532, -79.3832)
-//   },
-//   {
-//     name: "Dubai",
-//     ...latLngToPercent(25.2048, 55.2708)
-//   }
-// ];
 const locations = [
   {
-    name: "Delhi – NCR",
-    ...latLngToPercent(28.6139, 77.2090)
+    name: "India – Gurgaon",
+    // slightly north-east to avoid overlap with Mumbai
+    ...latLngToPercent(29.0, 77.5)
   },
   {
-    name: "Mumbai",
-    ...latLngToPercent(19.0760, 72.8777)
+    name: "India – Mumbai",
+    // slightly south-west to emphasize west coast
+    ...latLngToPercent(18.6, 72.6)
   },
   {
-    name: "Toronto, Canada",
-    // real: 43.6532, -79.3832
-    // tiny visual correction so it sits nicely on the landmass
-    ...latLngToPercent(44.0, -78.5)
+    name: "Germany – Eschborn",
+    ...latLngToPercent(50.1433, 8.5717)
   },
   {
-    name: "Dubai",
-    ...latLngToPercent(25.2048, 55.2708)
+    name: "Canada – Mississauga",
+    // tiny visual correction for SVG landmass
+    ...latLngToPercent(43.8, -79.2)
   }
 ];
+
 
 
 
@@ -65,73 +49,116 @@ const GetInTouch = () => {
     <section id="contact" className="bg-[#F7F3ED] py-24">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* LEFT: WORLD MAP */}
-        <div className="relative map-container">
+        {/* LEFT: MAP */}
+        <div className="relative scale-[1.08]">
           <img
             src={worldMap}
             alt="World map"
-            className="w-full opacity-70 grayscale scale-[1.05]"
+            className="w-full opacity-70 grayscale"
           />
 
-          {locations.map((loc, index) => (
+          {locations.map((loc, i) => (
             <div
-              key={index}
-              className="absolute -translate-x-1/2 -translate-y-1/2 group z-10"
+              key={i}
+              className="absolute -translate-x-1/2 -translate-y-1/2 group"
               style={{ top: loc.top, left: loc.left }}
             >
-              {/* Soft halo (creates separation) */}
-              <span className="absolute -inset-3 rounded-full bg-[#6BAF2E]/10 blur-md" />
+              {/* glow */}
+              <span className="absolute -inset-3 rounded-full bg-[#6BAF2E]/20 blur-md" />
+              {/* dot */}
+              <span className="relative block h-3.5 w-3.5 rounded-full bg-[#6BAF2E]" />
 
-              {/* Pulse ring */}
-              <span className="absolute inline-flex h-6 w-6 rounded-full bg-[#6BAF2E]/30 animate-ping" />
-
-              {/* Center dot */}
-              <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[#6BAF2E] shadow-md" />
-
-              {/* Tooltip */}
-              <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#0B1F33] text-white text-xs px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-lg">
+              {/* tooltip */}
+              <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap
+                bg-[#0B1F33] text-white text-xs px-3 py-1.5 rounded-md
+                opacity-0 group-hover:opacity-100 transition shadow-lg">
                 {loc.name}
               </span>
             </div>
           ))}
         </div>
 
-        {/* RIGHT: CONTENT + CARD */}
+        {/* RIGHT: CARD */}
         <div>
           <h2 className="text-3xl font-semibold text-[#0B1F33] mb-6">
             Get in touch
           </h2>
 
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-8 space-y-8">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-8">
 
-            <div>
-              <h4 className="font-semibold text-[#0B1F33] mb-1">
-                India – NCR
-              </h4>
-              <p className="text-[#4B5A6A]">
-                Gurugram / New Delhi
-              </p>
-              <a
-                href="mailto:contact@hyprleap.in"
-                className="text-[#6BAF2E] hover:underline mt-1 inline-block"
-              >
-                contact@hyprleap.in
-              </a>
+            {/* Our Offices */}
+            <h3 className="text-lg font-semibold text-[#0B1F33] mb-6">
+              Our offices at
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-8 text-sm text-[#4B5A6A]">
+
+              {/* INDIA */}
+              <div>
+                <h4 className="font-semibold text-[#0B1F33] mb-3">
+                  India
+                </h4>
+
+                <div className="mb-4">
+                  <p className="font-medium">Gurgaon</p>
+                  <p>18/38, G18 Road</p>
+                  <p>DLF Phase 1, Sector 26</p>
+                </div>
+
+                <div>
+                  <p className="font-medium">Mumbai</p>
+                  <p>Canary Building, Flat No. 1005</p>
+                  <p>Hiranandani Estate, Thane West</p>
+                  <p>Mumbai – 400607</p>
+                </div>
+              </div>
+
+              {/* INTERNATIONAL */}
+              <div>
+                <h4 className="font-semibold text-[#0B1F33] mb-3">
+                  International
+                </h4>
+
+                <div className="mb-4">
+                  <p className="font-medium">Germany</p>
+                  <p>Hauptstrasse 3b</p>
+                  <p>65760 Eschborn</p>
+                </div>
+
+                <div>
+                  <p className="font-medium">Canada</p>
+                  <p>116, 5530 Glen Erin Drive</p>
+                  <p>Mississauga</p>
+                </div>
+              </div>
+
             </div>
 
-            <div>
-              <h4 className="font-semibold text-[#0B1F33] mb-1">
-                Canada – Toronto
+            {/* CONTACT */}
+            <div className="border-t mt-8 pt-6">
+              <h4 className="font-semibold text-[#0B1F33] mb-2">
+                Contact us
               </h4>
-              <p className="text-[#4B5A6A]">
-                Toronto, Ontario
+
+              <p>
+                Email:{" "}
+                <a
+                  href="mailto:Satyajit@hyprleap.com"
+                  className="text-[#6BAF2E] hover:underline"
+                >
+                  Satyajit@hyprleap.com
+                </a>
               </p>
-              <a
-                href="mailto:info@hyprleap.ca"
-                className="text-[#6BAF2E] hover:underline mt-1 inline-block"
-              >
-                info@hyprleap.ca
-              </a>
+
+              <p className="mt-1">
+                Phone:{" "}
+                <a
+                  href="tel:+918800773484"
+                  className="text-[#6BAF2E] hover:underline"
+                >
+                  +91 88007 73484
+                </a>
+              </p>
             </div>
 
           </div>
@@ -143,3 +170,4 @@ const GetInTouch = () => {
 };
 
 export default GetInTouch;
+

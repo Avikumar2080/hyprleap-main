@@ -11,7 +11,7 @@ const leaders = [
   {
     id: "giri",
     name: "Giri Sunder",
-    title: "Co-Founder & Global Operating Partner – FMCG & Food",
+    title: "Global Operating Partner – FMCG & Food",
     oneLine:
       "Global FMCG and operations leader with deep Africa and emerging-market experience.",
     email: "giri@hyprleap.com",
@@ -53,23 +53,23 @@ He has led complex mandates such as scaling Religare from under $100M to over $1
   {
     id: "satyajit",
     name: "Satyajit Mohanty",
-    title: "Co-Founder & Chief Talent Strategist",
+    title: "Partner & Chief Talent Strategist",
     oneLine:
       "Enterprise HR and leadership strategy expert with 25+ years across global multinationals.",
     email: "satyajit@hyprleap.com",
     image: satyajitImg,
     bio: `An XLRI alumnus, Satyajit has led large-scale HR, organisation design, and leadership transformation across India, Europe, and LATAM.`,
   },
-  {
-    id: "rajul",
-    name: "Rajul Agrawal",
-    title: "Partner & Global Talent Strategist",
-    oneLine: "Leadership advisory and executive search specialist with expertise in research-driven, cross-industry talent solutions.",
-    email: "rajul@hyprleap.com",
-    image: rajulImg,
-    bio: "She brings deep expertise in executive search and leadership advisory, with a strong focus on identifying and placing transformative senior talent across diverse industries. Her strengths lie in research-driven hiring, cultural alignment, and strategic leadership assessment, helping organizations build resilient, future-ready leadership teams in complex and global environments.",
-    initials: "RJ",
-  }
+  // {
+  //   id: "rajul",
+  //   name: "Rajul Agrawal",
+  //   title: "Partner & Global Talent Strategist",
+  //   oneLine: "Leadership advisory and executive search specialist with expertise in research-driven, cross-industry talent solutions.",
+  //   email: "rajul@hyprleap.com",
+  //   image: rajulImg,
+  //   bio: "She brings deep expertise in executive search and leadership advisory, with a strong focus on identifying and placing transformative senior talent across diverse industries. Her strengths lie in research-driven hiring, cultural alignment, and strategic leadership assessment, helping organizations build resilient, future-ready leadership teams in complex and global environments.",
+  //   initials: "RJ",
+  // }
 ];
 
 export default function LeadershipTeam() {
